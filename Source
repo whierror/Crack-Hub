@@ -1,0 +1,109 @@
+local function rbxnotify(text, duration, Text)
+game.StarterGui:SetCore("SendNotification", {
+Title = text;
+Text = Text,
+Duration = duration;
+})
+end
+
+local DarkraiX = loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Kavo-Ui/main/Darkrai%20Ui", true))()
+local whitelisted = true
+local blacklisted = false
+local Library = DarkraiX:Window("Crack Hub","","",Enum.KeyCode.NumLock);
+
+status = Library:Tab("Status")
+
+status:Button("Check Whitelist",function()
+    rbxnotify("Whitelist", 5, "Checking Whitelist...")
+    wait(2)
+    if whitelisted == true then
+        rbxnotify("Whitelist", 5, "Whitelisted!")
+        LP1 = Library:Tab("LocalPlayers")
+
+LP1:Seperator("LocalPlayers (Watch Out Becuz if theres anticheat)")
+
+LP1:Toggle("Noclip",false,function(state)
+if state then
+_G.Noclip = true    local noclip = true char = game.Players.LocalPlayer.Character while _G.Noclip do if noclip == true then for _,v in pairs(char:children()) do pcall(function() if v.className == "Part" then v.CanCollide = false elseif v.ClassName == "Model" then v.Head.CanCollide = false end end) end end game:service("RunService").Stepped:wait() end
+else
+_G.Noclip = false    local noclip = true char = game.Players.LocalPlayer.Character while _G.Noclip do if noclip == true then for _,v in pairs(char:children()) do pcall(function() if v.className == "Part" then v.CanCollide = false elseif v.ClassName == "Model" then v.Head.CanCollide = false end end) end end game:service("RunService").Stepped:wait() end
+end
+end)
+
+LP1:Slider("WalkSpeed",16,500,16,function(ws)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = ws
+end)
+
+LP1:Slider("JumpPower",50,500,50,function(jp)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = jp
+end)
+
+LP1:Textbox("Custom WalkSpeed","Type Here!",true,function(cws)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = cws
+end)
+
+LP1:Textbox("Custom JumpPower","Type Here!",true,function(cjp)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = cjp
+end)
+
+LP1:Button("Reset WalkSpeed",function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+LP1:Button("Reset JumpPower",function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+Tab1 = Library:Tab("ScriptHubs")
+
+Tab1:Button("Reviz Admin",function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/RqaZUrBZ"))()
+end)
+
+Tab1:Button("Homebrew Admin",function()
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Syntaxx64/HomebrewAdmin/master/Main"))()
+end)
+
+Tab1:Button("Infinite Yield",function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+Tab1:Button("CMD X",function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source",true))()
+end)
+
+Tab1:Line() -- Just A Line!
+
+Tab1:Button("Domain Hub",function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexsoftworks/Domain/main/source'),true))()
+end)
+
+Tab1:Button("MoonUI v10",function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/IlikeyocutgHAH12/MoonUI-v10-/main/MoonUI%20v10'))()
+end)
+
+Tab1:Button("FE Equinox Hub",function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/wzB1Qh78"))()
+end)
+
+some = Library:Tab("Something")
+
+some:Button("Rejoin",function()
+    game:GetService("TeleportService"):Teleport(game.PlaceId, LocalPlayer)
+end)
+
+--[[
+"DarkraiX:ToggleUi()" Is The Toggle Of The Script!
+Put This In Ur Own Toggle Gui Cuz No Keybind Sadly :(
+]]
+    end
+    if whitelisted == false then
+        rbxnotify("Whitelist", 5, "Not Whitelisted!")
+    end
+    if blacklisted == true then
+        rbxnotify("Whitelist", 5, "You Are Blacklisted!")
+    end
+end)
+--[[
+    E
+]]
